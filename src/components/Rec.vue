@@ -6,25 +6,60 @@
         v-for="banner in banners"
         :key="`banner-${banner.bannerId}`"
       >
-        <!-- <img :src="banner.pic" /> -->
-        <img v-lazy="banner.pic" />
+        <!-- 懒加载图片存在变大的问题 -->
+        <!-- <img v-lazy="banner.pic" /> -->
+        <img :src="banner.pic" alt="" />
       </van-swipe-item>
     </van-swipe>
+    <!-- 推荐歌单 -->
+    <van-cell-group title="推荐歌单">
+      <van-grid :column-num="3" :border="false">
+        <van-grid-item
+          v-for="item in recMusicList"
+          :key="item.id"
+          :to="`/playlist?id=${item.id}`"
+        >
+          <van-image show-loading :src="item.picUrl" />
+          <span class="rec-music-list-name"
+            >{{ item.name.slice(0, 18) }}...</span
+          >
+        </van-grid-item>
+      </van-grid>
+    </van-cell-group>
+    <!-- 最新音乐 -->
+    <van-cell-group title="最新音乐">
+      <MusicList />
+    </van-cell-group>
   </div>
 </template>
 
 <script>
+import MusicList from "./musicList.vue";
 export default {
   name: "Rec",
   data() {
     return {
       banners: "",
+      recMusicList: "",
+      songName: "",
+      singer: "",
+      album: "",
+      songId: "",
     };
   },
   async created() {
     this.banners = await this.$ajax.getBanners();
+    this.recMusicList = await this.$ajax.getRecMusicList();
+    const latestMusicList = await this.$ajax.getLatstMusicList();
+    console.log(latestMusicList);
+    // this.res = latestMusicList.map(item => {
+    //   const
+
+    // })
   },
-  components: {},
+  components: {
+    MusicList,
+  },
 };
 </script>
 <style lang="less" scoped>
@@ -43,6 +78,9 @@ export default {
       width: 100%;
       border-radius: 5px;
     }
+  }
+  .rec-music-list-name {
+    font-size: 12px;
   }
 }
 </style>

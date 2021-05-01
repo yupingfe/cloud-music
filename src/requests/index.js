@@ -1,5 +1,5 @@
 import axios from 'axios'
-const ajax = axios.create({baseURL:'https://netease-cloud-music-api-orpin-six.vercel.app/'})
+const ajax = axios.create({baseURL:'https://cloud-music-api-eight.vercel.app/'})
 
 ajax.interceptors.response.use(resp => {
   if (resp.status === 200) {
@@ -17,7 +17,20 @@ const getBanners = async () => {
     return resp.banners
   }
 }
+// 获取推荐歌单
+const getRecMusicList = async () => {
+  const resp = await ajax.get('/personalized?limit=6')
+  return resp.result
+}
+
+// 获取最新歌曲名单
+const getLatstMusicList = async () => {
+  const resp = await ajax.get('/personalized/newsong')
+  return resp.result
+}
 
 export default {
-  getBanners
+  getBanners,
+  getRecMusicList,
+  getLatstMusicList
 }

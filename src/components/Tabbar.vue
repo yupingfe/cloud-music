@@ -1,8 +1,12 @@
 <template>
   <div id="tabbar">
-    <van-tabbar v-model="active" active-color="#ee0a24">
-      <van-tabbar-item name="home" icon="home-o" replace to="/home">首页</van-tabbar-item>
-      <van-tabbar-item name="my" icon="friends-o" replace to="/my">我的</van-tabbar-item>
+    <van-tabbar v-model="active" active-color="#ee0a24" placeholder>
+      <van-tabbar-item name="home" icon="home-o" replace to="/home"
+        >首页</van-tabbar-item
+      >
+      <van-tabbar-item name="my" icon="friends-o" replace to="/my"
+        >我的</van-tabbar-item
+      >
     </van-tabbar>
   </div>
 </template>
@@ -13,14 +17,13 @@ export default {
   components: {},
   data() {
     return {
-      active: 'home'
-    }
+      active: "home",
+    };
   },
   created() {
-    const currentPath = this.$route.path.slice(1)
-    this.active = currentPath
-  }
+    const currentPath = this.$route.path.slice(1);
+    this.active = currentPath;
+  },
 };
 </script>
-<style lang="less" scoped>
-</style>
+<style lang="less" scoped></style>

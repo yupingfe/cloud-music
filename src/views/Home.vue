@@ -7,7 +7,7 @@
       <van-tab title="热歌榜"><Toplist /></van-tab>
       <van-tab title="搜索"><Search /></van-tab>
     </van-tabs>
-    <Footer />
+    <!-- <Footer /> -->
     <Tabbar />
   </div>
 </template>
@@ -39,7 +39,4 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
-#home {
-}
-</style>
+<style lang="less" scoped></style>
