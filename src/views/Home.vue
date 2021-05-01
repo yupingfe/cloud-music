@@ -1,7 +1,8 @@
 <template>
   <div id="home">
     <Header />
-    <van-tabs v-model="active">
+    <!-- 头部tab栏 -->
+    <van-tabs v-model="active" animated>
       <van-tab title="推荐音乐"><Rec /></van-tab>
       <van-tab title="热歌榜"><Toplist /></van-tab>
       <van-tab title="搜索"><Search /></van-tab>
@@ -18,7 +19,7 @@ import Footer from "@/components/Footer.vue";
 import Rec from "@/components/Rec.vue";
 import Toplist from "@/components/Toplist.vue";
 import Search from "@/components/Search.vue";
-import Tabbar from '../components/Tabbar.vue';
+import Tabbar from "../components/Tabbar.vue";
 
 export default {
   name: "Home",
@@ -28,14 +29,17 @@ export default {
     Rec,
     Toplist,
     Search,
-    Tabbar
+    Tabbar,
   },
   data() {
     return {
-      active: 0
-    }
-  }
+      active: 0, // 头部tabbar的序号
+    };
+  },
 };
 </script>
+
 <style lang="less" scoped>
+#home {
+}
 </style>
