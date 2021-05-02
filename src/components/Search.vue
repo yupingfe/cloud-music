@@ -93,7 +93,6 @@ export default {
     //   const searchRes = await this.$ajax.getSearchRes(value);
     // },
     clickSuggest(val) {
-      console.log(val);
       this.value = val;
       this.showSuggest = false;
       this.showSearchResult = true;
