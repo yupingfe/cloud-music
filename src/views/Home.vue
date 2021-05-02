@@ -14,11 +14,11 @@
 
 <script>
 // @ is an alias to /src
-import Header from "@/components/Header.vue";
-import Footer from "@/components/Footer.vue";
-import Rec from "@/components/Rec.vue";
-import Toplist from "@/components/Toplist.vue";
-import Search from "@/components/Search.vue";
+import Header from "../components/Header.vue";
+import Footer from "../components/Footer.vue";
+import Rec from "../components/Rec.vue";
+import Toplist from "../components/Toplist.vue";
+import Search from "../components/Search.vue";
 import Tabbar from "../components/Tabbar.vue";
 
 export default {
