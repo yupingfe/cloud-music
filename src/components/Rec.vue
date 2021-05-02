@@ -28,7 +28,7 @@
     </van-cell-group>
     <!-- 最新音乐 -->
     <van-cell-group title="最新音乐">
-      <music-list requestName="getLatstMusicList" />
+      <MusicList requestName="getLatstMusicList" />
     </van-cell-group>
   </div>
 </template>
