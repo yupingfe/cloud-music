@@ -34,7 +34,7 @@
 <script>
 export default {
   name: "MusicList",
-  props: ["requestName"],
+  props: ["requestName", "toggleFinished"],
   data() {
     return {
       list: [],

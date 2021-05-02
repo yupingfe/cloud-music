@@ -34,23 +34,39 @@
 <script>
 export default {
   name: "MusicList",
-  props: ["requestName"],
+  props: ["requestName", "searchVal"],
   data() {
     return {
       list: [],
       loading: false,
       finished: false,
       musicList: [],
+      offset: 0,
     };
   },
-  mounted() {},
+  watch: {
+    searchVal(newVal, oldVal) {
+      this.musicList = [];
+      this.offset = 0;
+      this.onLoad();
+    },
+  },
   methods: {
     async onLoad() {
       const _this = this;
       // eval()使用存在安全性问题，需要想办法替换
-      this.musicList = await eval(`_this.$ajax.${_this.requestName}()`);
-      this.loading = false;
-      this.finished = true;
+      eval(
+        `_this.$ajax.${_this.requestName}('${_this.searchVal}', '${_this.offset}')`
+      ).then((resp) => {
+        this.musicList.push(...resp.list);
+        this.loading = false;
+        this.offset = this.offset + 20;
+        if (resp.hasMore) {
+          this.finished = false;
+        } else {
+          this.finished = true;
+        }
+      });
     },
   },
 };

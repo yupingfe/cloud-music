@@ -12,6 +12,7 @@
         autofocus
       />
     </form>
+    <!-- 热门搜索 -->
     <div v-show="!value">
       <van-cell-group title="热门搜索">
         <van-tag
@@ -27,6 +28,7 @@
         >
       </van-cell-group>
     </div>
+    <!-- 搜索建议 -->
     <div v-show="value && showSuggest">
       <van-cell
         v-for="(item, index) in suggest"
@@ -36,37 +38,50 @@
         size="large"
       />
     </div>
+    <!-- 搜索结果 -->
+    <MusicList
+      v-if="value && showSearchResult"
+      :requestName="`getSearchRes`"
+      :searchVal="value"
+    />
   </div>
 </template>
 
 <script>
+import MusicList from "./MusicList.vue";
 export default {
   name: "Search",
-  components: {},
+  components: {
+    MusicList,
+  },
   data() {
     return {
       value: "",
-      hotSearch: [],
-      suggest: [],
+      hotSearch: [], // 🔥搜
+      suggest: [], // 搜索建议
       showSuggest: false,
+      showSearchResult: false,
     };
   },
   created() {
     this.getHotSearch();
-    this.getSearchRes("海阔天空");
   },
   methods: {
     onSearch(val) {
-      console.log(val);
+      this.showSuggest = false;
+      this.showSearchResult = true;
     },
     onInput(val) {
       val ? this.getSuggest(val) : "";
     },
     onFocus() {
       this.showSuggest = true;
+      this.showSearchResult = false;
     },
     clickTag(val) {
-      console.log(val);
+      this.value = val;
+      this.showSuggest = false;
+      this.showSearchResult = true;
     },
     async getHotSearch() {
       this.hotSearch = await this.$ajax.getHotSearch();
@@ -74,14 +89,14 @@ export default {
     async getSuggest(value) {
       this.suggest = await this.$ajax.getSuggest(value);
     },
-    async getSearchRes(value) {
-      const searchRes = await this.$ajax.getSearchRes(value);
-      console.log(searchRes);
-    },
+    // async getSearchRes(value) {
+    //   const searchRes = await this.$ajax.getSearchRes(value);
+    // },
     clickSuggest(val) {
       console.log(val);
       this.value = val;
       this.showSuggest = false;
+      this.showSearchResult = true;
     },
   },
 };

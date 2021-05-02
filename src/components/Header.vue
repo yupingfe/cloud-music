@@ -18,6 +18,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   .logo {
     width: 40%;
   }
