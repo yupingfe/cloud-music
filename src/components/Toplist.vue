@@ -7,7 +7,7 @@
   </div>
 </template>
 <script>
-import MusicList from "./MusicList";
+import MusicList from "./MusicList.vue";
 export default {
   name: "Toplist",
   components: { MusicList },
