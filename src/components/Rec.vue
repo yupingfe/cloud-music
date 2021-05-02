@@ -28,34 +28,28 @@
     </van-cell-group>
     <!-- 最新音乐 -->
     <van-cell-group title="最新音乐">
-      <MusicList />
+      <MusicList requestName="getLatstMusicList" />
     </van-cell-group>
   </div>
 </template>
 
 <script>
-import MusicList from "./musicList.vue";
+import MusicList from "./MusicList.vue";
 export default {
   name: "Rec",
   data() {
     return {
       banners: "",
       recMusicList: "",
-      songName: "",
-      singer: "",
-      album: "",
-      songId: "",
+      LatstMusicList: ["hello"],
     };
   },
   async created() {
-    this.banners = await this.$ajax.getBanners();
-    this.recMusicList = await this.$ajax.getRecMusicList();
-    const latestMusicList = await this.$ajax.getLatstMusicList();
-    console.log(latestMusicList);
-    // this.res = latestMusicList.map(item => {
-    //   const
-
-    // })
+    // 可以同时触发的await请求
+    const getBannersPromise = this.$ajax.getBanners();
+    const getRecMusicListPromise = this.$ajax.getRecMusicList();
+    this.banners = await getBannersPromise;
+    this.recMusicList = await getRecMusicListPromise;
   },
   components: {
     MusicList,
