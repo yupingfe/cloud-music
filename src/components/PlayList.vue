@@ -1,5 +1,5 @@
 <template>
-  <div id="musicList">
+  <div id="playList">
     <van-list
       v-model="loading"
       :finished="finished"
@@ -33,7 +33,7 @@
 
 <script>
 export default {
-  name: "MusicList",
+  name: "PlayList",
   props: ["requestName", "searchVal"],
   data() {
     return {

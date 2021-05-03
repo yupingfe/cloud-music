@@ -39,7 +39,7 @@
       />
     </div>
     <!-- 搜索结果 -->
-    <MusicList
+    <PlayList
       v-if="value && showSearchResult"
       :requestName="`getSearchRes`"
       :searchVal="value"
@@ -48,11 +48,11 @@
 </template>
 
 <script>
-import MusicList from "./MusicList.vue";
+import PlayList from "./PlayList.vue";
 export default {
   name: "Search",
   components: {
-    MusicList,
+    PlayList,
   },
   data() {
     return {

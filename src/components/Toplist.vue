@@ -3,14 +3,14 @@
     <div class="header">
       <van-image :src="require('@/assets/hot_music_bg_2x.png')" />
     </div>
-    <MusicList requestName="getLatstMusicList" />
+    <PlayList requestName="getLatstMusicList" />
   </div>
 </template>
 <script>
-import MusicList from "./MusicList.vue";
+import PlayList from "./PlayList.vue";
 export default {
   name: "Toplist",
-  components: { MusicList },
+  components: { PlayList },
 };
 </script>
 <style lang="less" scoped>

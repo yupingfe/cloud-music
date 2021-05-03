@@ -28,13 +28,13 @@
     </van-cell-group>
     <!-- 最新音乐 -->
     <van-cell-group title="最新音乐">
-      <MusicList requestName="getLatstMusicList" />
+      <PlayList requestName="getLatstMusicList" />
     </van-cell-group>
   </div>
 </template>
 
 <script>
-import MusicList from "./MusicList.vue";
+import PlayList from "./PlayList.vue";
 export default {
   name: "Rec",
   data() {
@@ -52,7 +52,7 @@ export default {
     this.recMusicList = await getRecMusicListPromise;
   },
   components: {
-    MusicList,
+    PlayList,
   },
 };
 </script>
