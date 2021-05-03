@@ -1,7 +1,7 @@
 <template>
-  <div class="my">
+  <div class="about">
     <Header />
-    my
+    about
     <Tabbar />
   </div>
 </template>
@@ -10,7 +10,7 @@
 import Header from "../components/Header.vue";
 import Tabbar from "../components/Tabbar.vue";
 export default {
-  name: "My",
+  name: "About",
   components: {
     Tabbar,
     Header,

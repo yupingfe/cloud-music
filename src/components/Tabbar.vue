@@ -7,6 +7,9 @@
       <van-tabbar-item name="my" icon="friends-o" replace to="/my"
         >我的</van-tabbar-item
       >
+      <van-tabbar-item name="about" icon="ellipsis" replace to="/about"
+        >关于</van-tabbar-item
+      >
     </van-tabbar>
   </div>
 </template>

@@ -22,6 +22,7 @@
         :to="`/player?id=${item.id}`"
         center
         clickable
+        size="large"
       >
         <template #right-icon>
           <van-icon name="play-circle-o" size="22" />

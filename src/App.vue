@@ -5,12 +5,15 @@
 </template>
 <script>
 export default {
-  name: 'App',
-}
+  name: "App",
+  created() {},
+};
 </script>
 <style lang="less">
-html, body, #app {
+html,
+body,
+#app {
   width: 100%;
-  height: 100%
+  height: 100%;
 }
 </style>

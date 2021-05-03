@@ -21,7 +21,7 @@
         >
           <van-image show-loading :src="item.picUrl" />
           <span class="rec-music-list-name"
-            >{{ item.name.slice(0, 18) }}...</span
+            >{{ item.name.slice(0, 16) }}...</span
           >
         </van-grid-item>
       </van-grid>
@@ -46,11 +46,18 @@ export default {
   },
   async created() {
     // 可以同时触发的await请求
+    const toast = this.$toast.loading({
+      message: "加载中...",
+      forbidClick: true,
+      duration: 0,
+    });
     const getBannersPromise = this.$ajax.getBanners();
     const getRecMusicListPromise = this.$ajax.getRecMusicList();
     this.banners = await getBannersPromise;
     this.recMusicList = await getRecMusicListPromise;
+    toast.clear();
   },
+  methods: {},
   components: {
     PlayList,
   },

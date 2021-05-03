@@ -1,6 +1,6 @@
 <template>
   <div id="header">
-    <img src="@/assets/logo-big.png" alt="logo" class="logo" />
+    <van-image width="150" :src="require('@/assets/logo-big.png')" />
   </div>
 </template>
 
@@ -19,8 +19,5 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  .logo {
-    width: 40%;
-  }
 }
 </style>
