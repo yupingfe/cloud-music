@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/cloud-music/precache-manifest.a5ac30313bb0b6b4d140899401074f1c.js"
+  "/cloud-music/precache-manifest.ec6e3120ecf81d7a34ec6fd8fbcb55a6.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "cloud-music"});

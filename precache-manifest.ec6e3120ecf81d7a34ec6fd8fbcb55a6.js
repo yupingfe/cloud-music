@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3f9c06c0a1106fb9311d",
-    "url": "/cloud-music/css/app.0467bb43.css"
+    "revision": "03d3a4e776c45a5ac006",
+    "url": "/cloud-music/css/app.23fc96be.css"
   },
   {
-    "revision": "a09ba8c448ca935bd32a",
-    "url": "/cloud-music/css/chunk-vendors.84f17f95.css"
+    "revision": "4cbf0d3cdd8bea2d99cc",
+    "url": "/cloud-music/css/chunk-vendors.d19fbae3.css"
   },
   {
     "revision": "33448d058ff1101c83b410b4b8c29f18",
@@ -16,16 +16,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/cloud-music/img/logo-big.0c646b0c.png"
   },
   {
-    "revision": "c4875c9a863642a92435d381f11d2d02",
+    "revision": "7dfbbb2beebcc5eda01ea1ac197dc14c",
     "url": "/cloud-music/index.html"
   },
   {
-    "revision": "3f9c06c0a1106fb9311d",
-    "url": "/cloud-music/js/app.94ae5d30.js"
+    "revision": "03d3a4e776c45a5ac006",
+    "url": "/cloud-music/js/app.10f06327.js"
   },
   {
-    "revision": "a09ba8c448ca935bd32a",
-    "url": "/cloud-music/js/chunk-vendors.6f63c5bb.js"
+    "revision": "4cbf0d3cdd8bea2d99cc",
+    "url": "/cloud-music/js/chunk-vendors.a864d0e8.js"
   },
   {
     "revision": "c5e6da218bc416586c759cf6e1cc71b5",
